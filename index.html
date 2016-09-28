@@ -14,64 +14,80 @@
 		}
 	</style>
 </head>
-<body>
+<body id="app">
 <div class="container-fluid">
 	<div class="card-deck">
 	<div class="card-deck-wrapper">
-        <p id="player1score" >Player 1 score: <span id="scoreplayerone"></span></p>
-		<p id="player2score" >Player 2 score: <span id="scoreplayertwo"></span></p>
-		<p id="player3score" >Player 3 score: <span id="scoreplayerthree"></span></p>
-		<p id="player4score" >Player 4 score: <span id="scoreplayerfour"></span></p>
+        <p id="player1score" >Player 1 score: {{player1}}</p>
+		<p id="player2score" >Player 2 score: {{player2}}</p>
+		<p id="player3score" >Player 3 score: {{player3}}</p>
+		<p id="player4score" >Player 4 score: {{player4}}</p>
 		</div>
 	</div>
 		
+
+    
 	<div class="card-deck-wrapper">
 		<div class="card-deck">
             
              <div id="station" class="card">
                 <div class="card-header">Station</div>
+                <img id="road1" src="assets/imagesresize/station1.jpg" />
 				<div class="card-block">
-				</div>
-				<img id="road1" src="assets/imagesresize/station1.jpg" />
+                     <p class="card-text">Station</p>
+                     <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+                 
 			</div>
             
              <div id="incometax" class="card">
                 <div class="card-header">Income tax</div>
+                <img id="road1" src="assets/imagesresize/incometaxl.jpg" />
 				<div class="card-block">
-				</div>
-				<img id="road1" src="assets/imagesresize/incometaxl.jpg" />
+                     <p class="card-text">Income Tax</p>
+                     <a href="#" class="btn btn-primary">Pay</a>
+                </div>
 			</div>
             
             <div id="road2" class="card">
                 <div class="card-header">White chapel</div>
+                <img id="road1" src="assets/imagesresize/whitechapelroad.jpg" />
 				<div class="card-block">
-				</div>
-				<img id="road1" src="assets/imagesresize/whitechapelroad.jpg" />
+                     <p class="card-text">White chapel</p>
+                     <a href="#" class="btn btn-primary">Buy</a>
+                </div>
 			</div>
             
              <div id="chest" class="card">
-                <div class="card-header">Community chest</div>
+                <div class="card-header">Chest</div>
+                 <img id="road1" src="assets/imagesresize/communitychest.jpg" />
 				<div class="card-block">
-				</div>
-				<img id="road1" src="assets/imagesresize/communitychest.jpg" />
+                     <p class="card-text">Com. chest</p>
+                     <a href="#" class="btn btn-primary">Receive</a>
+                </div>
 			</div>
 
             <div id="road1" class="card">
                 <div class="card-header">Old kent</div>
+                <img id="road1" src="assets/imagesresize/oldkentroad.jpg" />
 				<div class="card-block">
-				</div>
-				<img id="road1" src="assets/imagesresize/oldkentroad.jpg" />
+                     <p class="card-text">Old Kent</p>
+                     <a href="#" class="btn btn-primary">Buy</a>
+                </div>
 			</div>
             
             <div id="Start" class="card">
                 <div class="card-header">Go</div>
+                <img id="go" src="assets/imagesresize/go.jpg" />
 				<div class="card-block">
-				</div>
-				<img id="go" src="assets/imagesresize/go.jpg" />
+                     <p class="card-text">Go</p>
+                     <a href="#" class="btn btn-primary">Collect</a>
+                </div>
 			</div>
 
 
 		</div>
+
 
     </div>
     </div>
@@ -82,6 +98,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <!-- Bootstrap 4 Alpha JS -->
 <!-- IMPORTANT: Don't use this .js file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
+<script src="js/vue.min.js"></script>
 <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 <script src="js/monopoly.js"></script>
 
