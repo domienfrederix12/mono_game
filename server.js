@@ -10,15 +10,35 @@ var http = require('http');
   console.log(req);
 }).listen(8010);*/
 
-var scores = {player1: 5, player2: 6, player3: 7, player4: 8 };
+var state = {
+    player1selected : false,
+    player2selected : false,
+    player3selected : false,
+    player4selected : false,
+    player1: 1500, 
+    player2: 1500, 
+    player3: 1500, 
+    player4: 1500 };
 
 
-var updateScores = function(object){
-    
-      scores.player1 = object.player1;  
-      scores.player2 = object.player2;  
-      scores.player3 = object.player3;  
-      scores.player4 = object.player4;  
+var updateState = function(object){
+      
+      if(object.selectedplayer == 1){
+          state.player1selected = true;
+          state.player1 = object.player1;  
+      };
+      if(object.selectedplayer == 2){
+          state.player2selected = true;
+          state.player2 = object.player2;
+      };
+      if(object.selectedplayer == 3){
+          state.player3selected = true;
+          state.player3 = object.player3; 
+      };
+      if(object.selectedplayer == 4){
+          state.player4selected = true;
+          state.player4 = object.player4; 
+      }; 
 }
 
 http.createServer(function (req, res) {
@@ -30,10 +50,10 @@ http.createServer(function (req, res) {
             body += data;
             console.log("JSON object: " + body);
             var object = JSON.parse(body);
-            updateScores(object);    
+            updateState(object);    
         });
         req.on('end', function () {
-            console.log("Body: " + body);
+            
         });
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.writeHead(200, {'Content-Type': 'text/html'});
@@ -43,9 +63,7 @@ http.createServer(function (req, res) {
      if (req.method == "GET") {
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.writeHead(200, {"Content-Type": "application/json"});
-        var json = JSON.stringify(
-        scores
-        );
+        var json = JSON.stringify(state);
         res.end(json);
     }
     
