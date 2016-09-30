@@ -12,12 +12,44 @@
 		body {
 			padding-top: 1em;
 		}
+        #board{
+    
+            display: none;
+    
+        }
+        h1, h2{
+            padding-bottom: 2%;
+        }
+        .jumbotron {
+            margin-bottom: 0px;
+            background-image: url(../assets/imagesresize/monopolybanner.jpg);
+            background-position: 0% 25%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            text-shadow: black 0.3em 0.3em 0.3em;
+        }
 	</style>
 </head>
 <body id="app">
-<div class="container-fluid">
+<div id="start">
+         <div class="jumbotron">  
+            <h1 id="select">Welcome to a game of monopoly</h1>  
+            <h2 id="select">Select your player:</h2> 
+            <!--Button Style1:Default-->
+             <div>
+                 <button type="button" class="btn btn-success" v-on:click="setPlayer(1)" v-show="!player1selected">Player 1</button>  
+                 <button type="button" class="btn btn-primary" v-on:click="setPlayer(2)" v-show="!player2selected">Player 2</button>  
+                 <button type="button" class="btn btn-info" v-on:click="setPlayer(3)" v-show="!player3selected">Player 3</button>  
+                 <button type="button" class="btn btn-warning" v-on:click="setPlayer(4)" v-show="!player4selected">Player 4</button></div>
+    </div>     
+</div>    
+    
+<div class="container-fluid" id="board">
+   
 	<div class="card-deck">
 	<div class="card-deck-wrapper">
+        <p >You are player {{selectedplayer}}</p>
         <p id="player1score" >Player 1 score: {{player1}}</p>
 		<p id="player2score" >Player 2 score: {{player2}}</p>
 		<p id="player3score" >Player 3 score: {{player3}}</p>
@@ -81,7 +113,7 @@
                 <img id="go" src="assets/imagesresize/go.jpg" />
 				<div class="card-block">
                      <p class="card-text">Go</p>
-                     <a href="#" class="btn btn-primary">Collect</a>
+                     <a href="#" class="btn btn-primary" id="collect">Collect</a>
                 </div>
 			</div>
 
@@ -90,7 +122,8 @@
 
 
     </div>
-    </div>
+    
+</div>    
 
 
 
